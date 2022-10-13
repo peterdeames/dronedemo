@@ -1,11 +1,6 @@
 pipeline {
   agent any
   stages {
-    stage('Checkout'){
-      steps {
-        echo 'LOG: Checkout codebase'
-      }
-    }
     stage('SonarQube analysis') {
       steps {
         script {
@@ -25,6 +20,11 @@ pipeline {
             waitForQualityGate abortPipeline: true
           }
         }
+      }
+    }
+    stage('Build'){
+      steps {
+        echo 'Build Placeholder'
       }
     }
   }
