@@ -8,7 +8,7 @@
 
 ## About the Project
 Trello Drone CI/CD Demo
-https://badgen.net/badge/:subject/:status/:color?icon=github
+https://badgen.net/badge/pypi/v/pip
 
 ### Built with
 * [Python][https://www.python.org/]
