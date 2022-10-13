@@ -10,4 +10,4 @@
 Trello Drone CI/CD Demo
 
 ### Built with
-* [Python][https://www.python.org/]
+* [Python](https://www.python.org)
