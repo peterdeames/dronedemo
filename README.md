@@ -8,7 +8,8 @@
 
 ## About the Project
 Trello Drone CI/CD Demo
-https://img.shields.io/github/last-commit/peterdeames/dronedemo/${GITHUB_REF_NAME}
+https://img.shields.io/github/last-commit/peterdeames/dronedemo
+https://badgen.net/pypi/v/pip
 
 ### Built with
 * [Python](https://www.python.org)
