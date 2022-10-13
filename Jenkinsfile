@@ -10,7 +10,7 @@ pipeline {
       steps {
         script {
           def scannerHome = tool 'SonarScanner';
-          withSonarQubeEnv('sonarqube') {
+          withSonarQubeEnv('SonarCloud') {
             sh "${tool("SonarScanner")}/bin/sonar-scanner -Dsonar.organization=peterdeames -Dsonar.projectKey=peterdeames_dronedemo -Dsonar.sources=. -Dsonar.host.url=https://sonarcloud.io"
           }
         }
