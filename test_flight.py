@@ -14,6 +14,7 @@ def main():
     """ This function will run a test flight to check the drone is connected """
     tello = Tello()
     try:
+        logging.info('Connecting to drone')
         tello.connect()
     except:
         logging.error('Connection failed')
