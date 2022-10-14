@@ -18,7 +18,7 @@ def main():
         tello.connect()
     except:
         logging.error('Connection failed')
-        sys.exit()
+        sys.exit(1)
     bat = tello.get_battery()
     logging.info('The battery has %d percent left', bat)
     if bat >= 10:

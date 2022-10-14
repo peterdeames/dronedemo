@@ -22,9 +22,13 @@ pipeline {
         }
       }
     }
-    stage('Build'){
+    stage('Setup'){
       steps {
         sh 'pip3 install -r requirements.txt'
+      }
+    }
+    stage('Test Flight'){
+      steps {
         sh 'python3 test_flight.py'
       }
     }
