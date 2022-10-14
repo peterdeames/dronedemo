@@ -31,5 +31,5 @@ def main():
                         please recharge and try again')
 
 
-if __name__ == "_main_":
+if __name__ == "__main__":
     main()
