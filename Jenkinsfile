@@ -1,6 +1,11 @@
 pipeline {
   agent any
   stages {
+    stage('Setup'){
+      steps {
+        sh 'pip3 install -r requirements.txt'
+      }
+    }
     stage('SonarQube analysis') {
       steps {
         script {
@@ -20,11 +25,6 @@ pipeline {
             waitForQualityGate abortPipeline: true
           }
         }
-      }
-    }
-    stage('Setup'){
-      steps {
-        sh 'pip3 install -r requirements.txt'
       }
     }
     stage('Test Flight'){
