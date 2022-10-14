@@ -24,7 +24,7 @@ pipeline {
     }
     stage('Build'){
       steps {
-        echo 'Build Placeholder'
+        sh 'python3 test_flight.py'
       }
     }
   }
