@@ -4,8 +4,8 @@ Run Test flight to check the connection and the battery levels
 import logging
 import sys
 import time
-from djitellopy import Tello
 import macwifi
+from djitellopy import Tello
 
 # The different levels of logging from the highest to the lowest urgency are:
 # CRITICAL | ERROR | WARNING | INFO | DEGUG
