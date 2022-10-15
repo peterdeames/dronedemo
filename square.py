@@ -37,7 +37,7 @@ def main():
     else:
         logging.warning('There is not enough power left in the battery \
                         please recharge and try again')
-    tello.exit()
+    tello.end()
 
 
 if __name__ == "__main__":
