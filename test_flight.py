@@ -3,7 +3,9 @@ Run Test flight to check the connection and the battery levels
 '''
 import logging
 import sys
+from tello_control import Tello, TelloCommand
 from tellodji import Tello
+
 
 
 # The different levels of logging from the highest to the lowest urgency are:
