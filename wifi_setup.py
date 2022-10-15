@@ -17,11 +17,13 @@ SSID_PWD = ''
 def connect_tello_mac():
     macwifi.connect("TELLO-AA5203", "")
     time.sleep(5)
+    logging.info('Connected to %s', macwifi.get_ssid)
 
 
 def connect_wifi_mac():
     macwifi.connect(SSID, SSID_PWD)
     time.sleep(5)
+    logging.info('Connected to %s', macwifi.get_ssid)
 
 
 def main():
