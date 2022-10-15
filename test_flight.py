@@ -3,7 +3,8 @@ Run Test flight to check the connection and the battery levels
 '''
 import logging
 import sys
-from djitellopy import Tello
+import telloFile
+
 
 # The different levels of logging from the highest to the lowest urgency are:
 # CRITICAL | ERROR | WARNING | INFO | DEGUG
@@ -12,7 +13,7 @@ logging.basicConfig(stream=sys.stderr, level=logging.INFO,
 
 def main():
     """ This function will run a test flight to check the drone is connected """
-    tello = Tello()
+    tello = telloFile.Tello()
     try:
         logging.info('Connecting to drone')
         tello.connect()
