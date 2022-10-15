@@ -10,6 +10,7 @@ pipeline {
     stage('Setup'){
       steps {
         sh 'pip3 install -r requirements.txt'
+        sh 'python3 wifi_setup.py'
       }
     }
     stage('SonarQube analysis') {
