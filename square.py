@@ -33,6 +33,7 @@ def main():
         tello.rotate_clockwise(90)
         tello.move_forward(50)
         tello.rotate_clockwise(90)
+        tello.move_forward(50)
         tello.land()
     else:
         logging.warning('There is not enough power left in the battery \
