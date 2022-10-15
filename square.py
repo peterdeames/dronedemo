@@ -25,14 +25,14 @@ def main():
         tello.takeoff()
         hgt = tello.get_height()
         logging.info('The drone is %dcm in the air', hgt)
-        tello.forward(10)
-        tello.clockwise(90)
-        tello.forward(10)
-        tello.clockwise(90)
-        tello.forward(10)
-        tello.clockwise(90)
-        tello.forward(10)
-        tello.clockwise(90)
+        tello.move_forward10
+        tello.rotate_clockwise(90)
+        tello.move_forward10
+        tello.rotate_clockwise(90)
+        tello.move_forward10
+        tello.rotate_clockwise(90)
+        tello.move_forward10
+        tello.rotate_clockwise(90)
         tello.land()
     else:
         logging.warning('There is not enough power left in the battery \
