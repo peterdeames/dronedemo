@@ -13,7 +13,7 @@ logging.basicConfig(stream=sys.stderr, level=logging.INFO,
 def connect_tello_mac():
     macwifi.connect("TELLO-AA5203", "")
     time.sleep(5)
-    logging.info('Connected to %s', macwifi.get_ssid)
+    logging.info('Connected to %s', macwifi.get_ssid())
 
 
 def main():
