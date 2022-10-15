@@ -3,7 +3,6 @@ import sys
 import time
 from sys import platform
 import macwifi
-from djitellopy import Tello
 
 # The different levels of logging from the highest to the lowest urgency are:
 # CRITICAL | ERROR | WARNING | INFO | DEGUG

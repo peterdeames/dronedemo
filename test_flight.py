@@ -3,7 +3,7 @@ Run Test flight to check the connection and the battery levels
 '''
 import logging
 import sys
-from djitellopy import Tello
+from tellodji import Tello
 
 
 
@@ -14,13 +14,13 @@ logging.basicConfig(stream=sys.stderr, level=logging.INFO,
 
 def main():
     """ This function will run a test flight to check the drone is connected """
-    tello = Tello()
-    try:
-        logging.info('Connecting to drone')
-        tello.connect()
-    except:
-        logging.error('Connection failed')
-        sys.exit(1)
+    tello = Tello(debug=True)
+    #try:
+    #    logging.info('Connecting to drone')
+    #    tello.connect()
+    #except:
+    #    logging.error('Connection failed')
+    #    sys.exit(1)
     bat = tello.get_battery()
     logging.info('The battery has %d percent left', bat)
     if bat >= 5:
@@ -31,7 +31,7 @@ def main():
     else:
         logging.warning('There is not enough power left in the battery \
                         please recharge and try again')
-    tello.end()
+    tello.exit()
 
 
 if __name__ == "__main__":
