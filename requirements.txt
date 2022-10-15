@@ -1,2 +1,3 @@
 djitellopy
+tellodji
 macwifi
