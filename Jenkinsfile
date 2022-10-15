@@ -7,12 +7,6 @@ pipeline {
     timeout(time: 5, unit: 'MINUTES')
   }
   stages {
-    stage('Setup'){
-      steps {
-        sh 'pip3 install -r requirements.txt'
-        sh 'python3 wifi_setup.py'
-      }
-    }
     stage('SonarQube analysis') {
       steps {
         script {
@@ -32,6 +26,12 @@ pipeline {
             waitForQualityGate abortPipeline: true
           }
         }
+      }
+    }
+    stage('Setup'){
+      steps {
+        sh 'pip3 install -r requirements.txt'
+        sh 'python3 wifi_setup.py'
       }
     }
     stage('Test Flight'){
