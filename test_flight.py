@@ -4,7 +4,6 @@ Run Test flight to check the connection and the battery levels
 import logging
 import sys
 from djitellopy import Tello
-import wifi_setup
 
 # The different levels of logging from the highest to the lowest urgency are:
 # CRITICAL | ERROR | WARNING | INFO | DEGUG
@@ -19,7 +18,6 @@ def main():
         tello.connect()
     except:
         logging.error('Connection failed')
-        wifi_setup.connect_wifi_mac()
         sys.exit(1)
     bat = tello.get_battery()
     logging.info('The battery has %d percent left', bat)
@@ -32,7 +30,6 @@ def main():
         logging.warning('There is not enough power left in the battery \
                         please recharge and try again')
     tello.end()
-    wifi_setup.connect_wifi_mac()
 
 
 if __name__ == "__main__":

@@ -10,16 +10,18 @@ logging.basicConfig(stream=sys.stderr, level=logging.INFO,
                     format='%(asctime)s | %(levelname)s | %(message)s')
 
 
-def connect_tello_mac():
-    macwifi.connect("TELLO-AA5203", "")
-    time.sleep(5)
+def connect_wifi_mac():
+    macwifi.turn_off()
+    time.sleep(10)
+    macwifi.turn_on()
+    time.sleep(10)
     logging.info('Connected to %s', macwifi.get_ssid)
 
 
 def main():
     if platform == "darwin":
         # OSX
-        connect_tello_mac()
+        connect_wifi_mac()
     else:
         logging.error('This script has not been written for %s', platform)
 

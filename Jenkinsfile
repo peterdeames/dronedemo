@@ -39,10 +39,20 @@ pipeline {
         sh 'python3 test_flight.py'
       }
     }
+    stage('Square Flight'){
+      steps {
+        sh 'python3 square.py'
+      }
+    }
     stage('Flip Flight'){
       steps {
         sh 'python3 flip.py'
       }
+    }
+  }
+  post{
+    always{
+      sh 'python3 wifi_disconnect.py'
     }
   }
 }
