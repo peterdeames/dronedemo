@@ -21,8 +21,10 @@ def connect_tello_mac():
 
 
 def connect_wifi_mac():
-    macwifi.connect(SSID, SSID_PWD)
+    # macwifi.connect(SSID, SSID_PWD)
+    macwifi.turn_off()
     time.sleep(5)
+    macwifi.turn_on()
     logging.info('Connected to %s', macwifi.get_ssid)
 
 
