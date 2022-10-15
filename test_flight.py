@@ -23,7 +23,7 @@ def main():
         sys.exit(1)
     bat = tello.get_battery()
     logging.info('The battery has %d percent left', bat)
-    if bat >= 10:
+    if bat >= 5:
         tello.takeoff()
         hgt = tello.get_height()
         logging.info('The drone is %dcm in the air', hgt)
