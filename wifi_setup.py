@@ -1,8 +1,8 @@
-import time
-import macwifi
 import logging
+import sys
+import time
 from sys import platform
-
+import macwifi
 
 # The different levels of logging from the highest to the lowest urgency are:
 # CRITICAL | ERROR | WARNING | INFO | DEGUG
