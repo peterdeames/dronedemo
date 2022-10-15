@@ -10,10 +10,6 @@ logging.basicConfig(stream=sys.stderr, level=logging.INFO,
                     format='%(asctime)s | %(levelname)s | %(message)s')
 
 
-SSID = 'SKY83C4A'
-SSID_PWD = ''
-
-
 def connect_tello_mac():
     macwifi.connect("TELLO-AA5203", "")
     time.sleep(5)
@@ -21,9 +17,8 @@ def connect_tello_mac():
 
 
 def connect_wifi_mac():
-    # macwifi.connect(SSID, SSID_PWD)
     macwifi.turn_off()
-    time.sleep(5)
+    time.sleep(10)
     macwifi.turn_on()
     logging.info('Connected to %s', macwifi.get_ssid)
 

@@ -39,5 +39,10 @@ pipeline {
         sh 'python3 test_flight.py'
       }
     }
+    stage('Flip Flight'){
+      steps {
+        sh 'python3 flip.py'
+      }
+    }
   }
 }
