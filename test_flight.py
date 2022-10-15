@@ -31,6 +31,7 @@ def main():
     else:
         logging.warning('There is not enough power left in the battery \
                         please recharge and try again')
+    tello.end()
     wifi_setup.connect_wifi_mac()
 
 
