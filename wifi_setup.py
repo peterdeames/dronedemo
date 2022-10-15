@@ -20,6 +20,7 @@ def connect_wifi_mac():
     macwifi.turn_off()
     time.sleep(10)
     macwifi.turn_on()
+    time.sleep(10)
     logging.info('Connected to %s', macwifi.get_ssid)
 
 
