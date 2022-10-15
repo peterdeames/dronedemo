@@ -13,10 +13,10 @@ logging.basicConfig(stream=sys.stderr, level=logging.INFO,
 
 def connect_wifi_mac():
     macwifi.turn_off()
-    time.sleep(10)
+    time.sleep(15)
     macwifi.turn_on()
-    time.sleep(10)
-    logging.info('Connected to %s', macwifi.get_ssid)
+    time.sleep(15)
+    logging.info('Connected to %s', macwifi.get_ssid())
 
 
 def main():
