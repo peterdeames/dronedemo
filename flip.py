@@ -3,7 +3,7 @@ Run Test flight to check the connection and the battery levels
 '''
 import logging
 import sys
-from tellodji import Tello
+from djitellopy import Tello
 
 # The different levels of logging from the highest to the lowest urgency are:
 # CRITICAL | ERROR | WARNING | INFO | DEGUG
@@ -26,7 +26,7 @@ def main():
         hgt = tello.get_height()
         logging.info('The drone is %dcm in the air', hgt)
         tello.flip_forward()
-        tello.flip_backward()
+        tello.flip_back()
         tello.flip_left()
         tello.flip_right()
         tello.land()
