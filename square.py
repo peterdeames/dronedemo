@@ -25,13 +25,13 @@ def main():
         tello.takeoff()
         hgt = tello.get_height()
         logging.info('The drone is %dcm in the air', hgt)
-        tello.move_forward10
+        tello.move_forward(10)
         tello.rotate_clockwise(90)
-        tello.move_forward10
+        tello.move_forward(10)
         tello.rotate_clockwise(90)
-        tello.move_forward10
+        tello.move_forward(10)
         tello.rotate_clockwise(90)
-        tello.move_forward10
+        tello.move_forward(10)
         tello.rotate_clockwise(90)
         tello.land()
     else:
