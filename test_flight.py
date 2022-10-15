@@ -3,6 +3,7 @@ Run Test flight to check the connection and the battery levels
 '''
 import logging
 import sys
+import time
 from djitellopy import Tello
 import macwifi
 
@@ -13,7 +14,10 @@ logging.basicConfig(stream=sys.stderr, level=logging.INFO,
 
 def main():
     """ This function will run a test flight to check the drone is connected """
+    print(macwifi.list())
     macwifi.connect("TELLO-AA5203", "")
+    time.sleep(5)
+    print(macwifi.get_ssid)
     tello = Tello()
     try:
         logging.info('Connecting to drone')
