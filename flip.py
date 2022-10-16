@@ -8,7 +8,7 @@ from djitellopy import Tello
 # The different levels of logging from the highest to the lowest urgency are:
 # CRITICAL | ERROR | WARNING | INFO | DEGUG
 logging.basicConfig(stream=sys.stderr, level=logging.INFO,
-                    format='%(asctime)s | %(levelname)s | %(message)s')
+                    format='[%(levelname)s] - %(message)s')
 
 def main():
     """ This function will run a test flight to check the drone is connected """
