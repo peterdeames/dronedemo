@@ -7,7 +7,7 @@ import macwifi
 # The different levels of logging from the highest to the lowest urgency are:
 # CRITICAL | ERROR | WARNING | INFO | DEGUG
 logging.basicConfig(stream=sys.stderr, level=logging.INFO,
-                    format='%(asctime)s | %(levelname)s | %(message)s')
+                    format='[%(levelname)s] - %(message)s')
 
 
 def connect_wifi_mac():
