@@ -17,11 +17,16 @@ def connect_tello_mac():
 
 
 def main():
-    if platform == "darwin":
-        # OSX
-        connect_tello_mac()
-    else:
-        logging.error('This script has not been written for %s', platform)
+    try:
+        if platform == "darwin":
+            # OSX
+            connect_tello_mac()
+        else:
+            logging.error('This script has not been written for %s', platform)
+    except Exception as e:
+        logging.error('Could not connect to wifi')
+        logging.error('%s', e)
+        sys.exit(1)
 
 
 if __name__ == "__main__":
