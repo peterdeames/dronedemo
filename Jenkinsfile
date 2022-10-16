@@ -21,7 +21,7 @@ pipeline {
       steps {
         script {
           def qualitygate = waitForQualityGate()
-          sleep(10)
+          sleep(20)
           if (qualitygate.status != "OK") {
             waitForQualityGate abortPipeline: true
           }
@@ -39,12 +39,12 @@ pipeline {
         sh 'python3 test_flight.py'
       }
     }
-    stage('Square Flight'){
+    stage('Square Dance'){
       steps {
         sh 'python3 square.py'
       }
     }
-    stage('Flip Flight'){
+    stage('Flip n Flight'){
       steps {
         sh 'python3 flip.py'
       }
