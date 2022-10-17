@@ -3,15 +3,17 @@ import sys
 from djitellopy import Tello
 
 tello = Tello()
+str1 = 'The battery has'
+str2 = 'percent left'
 
 def check_battery():
     bat = tello.get_battery()
     if bat >= 10:
-        logging.info('The battery has %d percent left', bat)
+        logging.info('%s %d %s', str1, bat, str2)
     elif bat > 5:
-        logging.warn('The battery has %d percent left', bat)
+        logging.warn('%s %d %s', str1, bat, str2)
     elif bat <= 5:
-        logging.critical('The battery has %d percent left', bat)
+        logging.critical('%s %d %s', str1, bat, str2)
     return bat
 
 
