@@ -20,19 +20,16 @@ pipeline {
     stage("Quality gate") {
       steps {
         script {
-          //def qualitygate = waitForQualityGate()
-          //while (qualitygate.status == "IN_PROGRESS")
-            //sleep(20)
-          for(int i = 0;i<5;i++) {
+          for(int i = 0;i<9;i++) {
             qualitygate = waitForQualityGate();
             println(qualitygate.status);
-            sleep(20)
+            sleep(10)
             if(qualitygate.status == 'OK')
               break;
           }
-          //if (qualitygate.status != "OK") {
-          //  waitForQualityGate abortPipeline: true
-          //}
+          if (qualitygate.status != "OK") {
+            waitForQualityGate abortPipeline: true
+          }
         }
       }
     }
