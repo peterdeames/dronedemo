@@ -7,7 +7,7 @@ pipeline {
     timeout(time: 5, unit: 'MINUTES')
   }
   stages {
-    stage{'Testing'}{
+    stage('Testing'){
       parallel{
         stage('Quality Testing'){
           stages{
@@ -21,7 +21,7 @@ pipeline {
                 }
               }
             }
-            stage("Quality gate") {
+            stage('Quality gate') {
               steps {
                 script {
                   for(int i = 0;i<9;i++) {
