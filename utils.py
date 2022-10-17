@@ -12,7 +12,6 @@ def check_battery():
         logging.warn('The battery has %d percent left', bat)
     elif bat <= 5:
         logging.critical('The battery has %d percent left', bat)
-<<<<<<< HEAD
     return bat
 
 
@@ -20,6 +19,3 @@ def low_bettery():
     logging.warning('There is not enough power left in the battery')
     logging.warning('Please recharge and try again')
     sys.exit(1)
-=======
-    return bat
->>>>>>> origin
