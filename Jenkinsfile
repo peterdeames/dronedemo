@@ -48,7 +48,7 @@ pipeline {
             stage('Bandit'){
               steps{
                 echo 'Run Security Tests'
-                bandit -r ./
+                //bandit -r ./
                 /* snykSecurity (
                   organisation: 'peterdeames',
                   projectName: 'dronedemo',
