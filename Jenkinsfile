@@ -32,6 +32,17 @@ pipeline {
         }
       }
     }
+    stage('Snyk'){
+      steps{
+        snykSecurity (
+          organisation: 'peterdeames',
+          projectName: 'dronedemo',
+          severity: 'critical',
+          snykInstallation: 'Snyk-1.1032.0',
+          snykTokenId: 'Snyk Token'
+        )
+      }
+    }
     stage('Setup'){
       steps {
         sh 'pip3 install -r requirements.txt'
