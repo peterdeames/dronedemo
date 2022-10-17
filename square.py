@@ -27,6 +27,7 @@ def main():
         if hgt < 200:
             up = 200 - hgt
             print(up)
+            tello.move_up(up)
         tello.move_forward(50)
         tello.rotate_clockwise(90)
         tello.move_forward(50)
