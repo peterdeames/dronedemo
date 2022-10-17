@@ -48,7 +48,7 @@ pipeline {
                   severity: 'critical',
                   snykInstallation: 'Snyk-1.1032.0',
                   snykTokenId: 'Snyk Token',
-                  failonError: False
+                  failOnError: False
                 )
               }
             }
