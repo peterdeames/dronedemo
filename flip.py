@@ -5,6 +5,7 @@ import logging
 import sys
 from djitellopy import Tello
 import utils
+from time import sleep
 
 # The different levels of logging from the highest to the lowest urgency are:
 # CRITICAL | ERROR | WARNING | INFO | DEGUG
@@ -24,10 +25,15 @@ def main():
         tello.takeoff()
         hgt = tello.get_height()
         logging.info('The drone is %dcm in the air', hgt)
+        sleep(1)
         tello.flip_forward()
+        sleep(1)
         tello.flip_back()
+        sleep(1)
         tello.flip_left()
+        sleep(1)
         tello.flip_right()
+        sleep(1)
         tello.land()
     else:
         logging.warning('There is not enough power left in the battery \

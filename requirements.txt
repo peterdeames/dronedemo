@@ -1,3 +1,2 @@
 djitellopy
-droneblocks-python-utils
 macwifi
