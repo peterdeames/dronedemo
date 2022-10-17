@@ -83,6 +83,11 @@ pipeline {
         sh 'python3 flip.py'
       }
     }
+    stage('Round aabout'){
+      steps {
+        sh 'python3 circular.py'
+      }
+    }
   }
   post{
     always{
