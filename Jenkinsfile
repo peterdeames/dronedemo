@@ -78,14 +78,14 @@ pipeline {
         sh 'python3 square.py'
       }
     }
-    stage('Flip n Flight'){
-      steps {
-        sh 'python3 flip.py'
-      }
-    }
     stage('Round about'){
       steps {
         sh 'python3 circular.py'
+      }
+    }
+    stage('Flip n Flight'){
+      steps {
+        sh 'python3 flip.py'
       }
     }
   }
