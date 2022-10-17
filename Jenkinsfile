@@ -25,9 +25,9 @@ pipeline {
             //sleep(20)
           for(int i = 0;i<5;i++) {
             qualitygate = waitForQualityGate();
-            println(qualitygate);
+            println(qualitygate.status);
             sleep(20)
-            if(qualitygate == 'OK')
+            if(qualitygate.status == 'OK')
               break;
           }
           //if (qualitygate.status != "OK") {
