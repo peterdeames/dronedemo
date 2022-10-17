@@ -40,9 +40,9 @@ pipeline {
         }
         stage('Security'){
           stages{
-            stage('Snyk'){
+            stage('Bandit'){
               steps{
-                echo 'Run Security Testing'
+                sh 'bandit -r .'
                 /* snykSecurity (
                   organisation: 'peterdeames',
                   projectName: 'dronedemo',
