@@ -24,18 +24,16 @@ def main():
         tello.takeoff()
         hgt = tello.get_height()
         logging.info('The drone is %dcm in the air', hgt)
-        #if hgt < 200:
-        #    up = 200 - hgt
-        #    print(up)
-        #    tello.move_up(up)
-        #    hgt = tello.get_height()
-        #    logging.info('The drone is now %dcm in the air', hgt)
+        if hgt < 200:
+            up = 200 - hgt
+            print(up)
+            tello.move_up(up)
+            hgt = tello.get_height()
+            logging.info('The drone is now %dcm in the air', hgt)
         tello.curve_xyz_speed(25, -25, 0, 25, -75, 0, 20)
         tello.land()
     else:
-        logging.warning('There is not enough power left in the battery \
-                        please recharge and try again')
-        sys.exit(1)
+        utils.low_bettery()
     tello.end()
 
 

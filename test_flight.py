@@ -26,9 +26,7 @@ def main():
         logging.info('The drone is %dcm in the air', hgt)
         tello.land()
     else:
-        logging.warning('There is not enough power left in the battery \
-                        please recharge and try again')
-        sys.exit(1)
+        utils.low_bettery()
     tello.end()
 
 

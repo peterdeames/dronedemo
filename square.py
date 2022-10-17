@@ -52,9 +52,7 @@ def main():
         sleep(1)
         tello.land()
     else:
-        logging.warning('There is not enough power left in the battery \
-                        please recharge and try again')
-        sys.exit(1)
+        utils.low_bettery()
     tello.end()
 
 
