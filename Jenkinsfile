@@ -7,6 +7,11 @@ pipeline {
     timeout(time: 5, unit: 'MINUTES')
   }
   stages {
+    stage('Setup'){
+      steps {
+        sh 'pip3 install -r requirements.txt'
+      }
+    }
     stage('Testing'){
       parallel{
         stage('Quality Testing'){
@@ -43,7 +48,7 @@ pipeline {
             stage('Bandit'){
               steps{
                 echo 'Run Security Tests'
-                //sh 'bandit -r .'
+                bandit -r -f html -o bandit_report.html .
                 /* snykSecurity (
                   organisation: 'peterdeames',
                   projectName: 'dronedemo',
@@ -58,9 +63,8 @@ pipeline {
         }
       }
     }
-    stage('Setup'){
+    stage('Connect'){
       steps {
-        sh 'pip3 install -r requirements.txt'
         sh 'python3 wifi_setup.py'
       }
     }
