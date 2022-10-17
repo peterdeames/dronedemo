@@ -22,10 +22,9 @@ pipeline {
         script {
           for(int i = 0;i<9;i++) {
             qualitygate = waitForQualityGate();
-            println(qualitygate.status);
-            sleep(10)
             if(qualitygate.status == 'OK')
               break;
+            sleep(10)
           }
           if (qualitygate.status != "OK") {
             waitForQualityGate abortPipeline: true
