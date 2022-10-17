@@ -41,17 +41,17 @@ pipeline {
         stage('Security'){
           stages{
             stage('Snyk'){
-              echo 'Run Security Testing'
-              /* steps{
-                snykSecurity (
+              steps{
+                echo 'Run Security Testing'
+                /* snykSecurity (
                   organisation: 'peterdeames',
                   projectName: 'dronedemo',
                   severity: 'critical',
                   snykInstallation: 'Snyk-1.1032.0',
                   snykTokenId: 'Snyk Token',
                   failOnError: False
-                )
-              } */
+                ) */
+              }
             }
           }
         }
