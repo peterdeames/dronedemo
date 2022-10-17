@@ -20,7 +20,7 @@ def main():
     except:
         logging.error('Connection failed')
         sys.exit(1)
-    if utils.check_battery >= 5:
+    if utils.check_battery() >= 5:
         tello.takeoff()
         hgt = tello.get_height()
         logging.info('The drone is %dcm in the air', hgt)
