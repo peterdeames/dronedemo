@@ -3,6 +3,7 @@ import sys
 from djitellopy import Tello
 
 tello = Tello()
+flight_height = 150
 str1 = 'The battery has'
 str2 = 'percent left'
 
@@ -32,8 +33,8 @@ def connect():
         sys.exit(1)
 
 def set_height(hgt):
-    if hgt < 200:
-        up = 200 - hgt
+    if hgt < flight_height:
+        up = flight_height - hgt
         tello.move_up(up)
         hgt = tello.get_height()
         logging.info('The drone is now %dcm in the air', hgt)
