@@ -27,7 +27,7 @@ def main():
         logging.info('The drone is %dcm in the air', hgt)
         #utils.set_height(hgt)
 
-        frame_read = me.get_frame_read()
+        frame_read = tello.get_frame_read()
         myFrame = frame_read.frame
         img = cv2.resize(myFrame, (width, height))
         cv2.imshow("MyResult", img)
