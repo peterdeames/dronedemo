@@ -12,6 +12,10 @@ import cv2
 logging.basicConfig(stream=sys.stderr, level=logging.INFO,
                     format='[%(levelname)s] - %(message)s')
 
+width = 320
+height = 240
+startCounter = 1
+
 def main():
     """ This function will run a test flight to check the drone is connected """
     tello = Tello()
@@ -25,7 +29,7 @@ def main():
         tello.streamon()
         frame_read = tello.get_frame_read()
         cv2.imwrite("picture.png", frame_read.frame)
-        tello.land()
+        #tello.land()
     else:
         utils.low_battery()
     tello.end()
