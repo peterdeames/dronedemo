@@ -21,3 +21,12 @@ def low_bettery():
     logging.warning('There is not enough power left in the battery')
     logging.warning('Please recharge and try again')
     sys.exit(1)
+
+
+def connect():
+    try:
+        logging.info('Connecting to drone')
+        tello.connect()
+    except:
+        logging.error('Connection failed')
+        sys.exit(1)
