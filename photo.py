@@ -5,6 +5,7 @@ import logging
 import sys
 from djitellopy import Tello
 import utils
+import cv2
 
 # The different levels of logging from the highest to the lowest urgency are:
 # CRITICAL | ERROR | WARNING | INFO | DEGUG
@@ -16,10 +17,14 @@ def main():
     tello = Tello()
     utils.connect()
     if utils.check_battery() >= 5:
-        tello.takeoff()
+        #tello.takeoff()
+        tello.streamon()
         hgt = tello.get_height()
         logging.info('The drone is %dcm in the air', hgt)
         utils.set_height(hgt)
+        tello.streamon()
+        frame_read = tello.get_frame_read()
+        cv2.imwrite("picture.png", frame_read.frame)
         tello.land()
     else:
         utils.low_battery()

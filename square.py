@@ -20,12 +20,7 @@ def main():
         tello.takeoff()
         hgt = tello.get_height()
         logging.info('The drone is %dcm in the air', hgt)
-        if hgt < 200:
-            up = 200 - hgt
-            print(up)
-            tello.move_up(up)
-            hgt = tello.get_height()
-            logging.info('The drone is now %dcm in the air', hgt)
+        utils.set_height(hgt)
         sleep(1)
         tello.move_forward(50)
         sleep(1)
@@ -47,7 +42,7 @@ def main():
         sleep(1)
         tello.land()
     else:
-        utils.low_bettery()
+        utils.low_battery()
     tello.end()
 
 

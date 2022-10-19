@@ -68,7 +68,7 @@ pipeline {
         sh 'python3 wifi_setup.py'
       }
     }
-    stage('Test Flight'){
+    /* stage('Test Flight'){
       steps {
         sh 'python3 test_flight.py'
       }
@@ -86,6 +86,11 @@ pipeline {
     stage('Flip n Flight'){
       steps {
         sh 'python3 flip.py'
+      }
+    } */
+    stage('Smile'){
+      steps {
+        sh 'python3 photo.py'
       }
     }
   }

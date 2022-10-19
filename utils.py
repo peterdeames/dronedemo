@@ -17,7 +17,7 @@ def check_battery():
     return bat
 
 
-def low_bettery():
+def low_battery():
     logging.warning('There is not enough power left in the battery')
     logging.warning('Please recharge and try again')
     sys.exit(1)
@@ -30,3 +30,10 @@ def connect():
     except:
         logging.error('Connection failed')
         sys.exit(1)
+
+def set_height(hgt):
+    if hgt < 200:
+        up = 200 - hgt
+        tello.move_up(up)
+        hgt = tello.get_height()
+        logging.info('The drone is now %dcm in the air', hgt)
