@@ -15,12 +15,7 @@ logging.basicConfig(stream=sys.stderr, level=logging.INFO,
 def main():
     """ This function will run a test flight to check the drone is connected """
     tello = Tello()
-    try:
-        logging.info('Connecting to drone')
-        tello.connect()
-    except:
-        logging.error('Connection failed')
-        sys.exit(1)
+    utils.connect()
     if utils.check_battery() >= 5:
         tello.takeoff()
         hgt = tello.get_height()
