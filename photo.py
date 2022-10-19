@@ -21,7 +21,7 @@ def main():
         tello.streamon()
         hgt = tello.get_height()
         logging.info('The drone is %dcm in the air', hgt)
-        utils.set_height(hgt)
+        #utils.set_height(hgt)
         tello.streamon()
         frame_read = tello.get_frame_read()
         cv2.imwrite("picture.png", frame_read.frame)
