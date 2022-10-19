@@ -26,14 +26,13 @@ def main():
         hgt = tello.get_height()
         logging.info('The drone is %dcm in the air', hgt)
         #utils.set_height(hgt)
-        frame_read = tello.get_frame_read()
-        cv2.namedWindow("drone")
-        frame_read = tello.get_frame_read()
-        img = frame_read.frame
-        cv2.imshow("drone", img)
+
+        frame_read = me.get_frame_read()
+        myFrame = frame_read.frame
+        img = cv2.resize(myFrame, (width, height))
+        cv2.imshow("MyResult", img)
         time.sleep(10)
-        frame_read.stop()
-        tello.streamoff()
+
         #tello.land()
     else:
         utils.low_battery()
