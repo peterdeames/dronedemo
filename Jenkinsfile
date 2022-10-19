@@ -30,10 +30,10 @@ pipeline {
               steps {
                 script {
                   for(int i = 0;i<9;i++) {
+                    sleep(10)
                     qualitygate = waitForQualityGate();
                     if(qualitygate.status == 'OK')
                       break;
-                    sleep(10)
                   }
                   if (qualitygate.status != "OK") {
                     waitForQualityGate abortPipeline: true
